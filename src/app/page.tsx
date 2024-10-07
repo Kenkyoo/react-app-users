@@ -4,7 +4,12 @@ import { useState, useEffect } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 import Card from './card';
 
@@ -28,18 +33,26 @@ export default function Home() {
 
     return (
       <Swiper
-        spaceBetween={50}
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        spaceBetween={0}
         slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
         {data.map ((user) => (
-          <SwiperSlide key={user.login.md5}>
+          <SwiperSlide key={user.login.uuid}>
             <Card
               name={`${user.name.first} ${user.name.last}`}
               phone={user.phone}
               email={user.email}
-              picture={user.picture.medium} 
+              picture={user.picture.large} 
+              age={user.age}
+              gender={user.gender}
+              city={user.location.city}
+              country={user.location.country}
             />
           </SwiperSlide>
         ))}
