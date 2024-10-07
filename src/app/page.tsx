@@ -49,7 +49,7 @@ export default function Home() {
               phone={user.phone}
               email={user.email}
               picture={user.picture.large} 
-              age={user.age}
+              age={user.dob.age}
               gender={user.gender}
               city={user.location.city}
               country={user.location.country}

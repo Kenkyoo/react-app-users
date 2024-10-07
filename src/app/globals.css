@@ -28,6 +28,10 @@ body {
 
 .swiper {
   min-height: 100vh;
+  background-image: url(../../public/3418816.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .swiper-slide {
