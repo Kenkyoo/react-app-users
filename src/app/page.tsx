@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-// Import Swiper React components
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 
 import Card from './card';
@@ -23,25 +22,27 @@ export default function Home() {
         })
     }, [])
     
-    if (data) {
+    if (data.length === 0) {
+      return <div>Loading...</div>;
+    }
 
     return (
-      
       <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+        spaceBetween={50}
+        slidesPerView={1}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
       >
-        {data.map ((user) => {
-          <SwiperSlide>
+        {data.map ((user) => (
+          <SwiperSlide key={user.login.md5}>
             <Card
-              name={user.name} 
+              name={`${user.name.first} ${user.name.last}`}
+              phone={user.phone}
+              email={user.email}
+              picture={user.picture.medium} 
             />
           </SwiperSlide>
-        })}
-        
+        ))}
       </Swiper>
     );
-  }
 }
