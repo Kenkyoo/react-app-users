@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+React App Users
 
-## Getting Started
+Este es un proyecto sencillo hecho con React, Next.js y Vercel, que muestra un carrusel de usuarios obtenidos desde la API de randomuser.me. Los usuarios se presentan con su nombre, edad, teléfono, correo electrónico y ubicación.
+Demo
 
-First, run the development server:
+Puedes ver el demo en:
+Ver Demo en Vercel
+Tecnologías
 
-```bash
+    React: Librería para construir la interfaz de usuario.
+    Next.js: Framework para React que permite renderizado del lado del servidor (SSR) y generación de sitios estáticos (SSG).
+    Swiper: Biblioteca para crear carruseles (slides).
+    TailwindCSS: Framework de diseño para estilos rápidos y responsivos.
+    DaisyUI: Componentes de interfaz de usuario sobre TailwindCSS.
+    TypeScript: Lenguaje que agrega tipos estáticos a JavaScript.
+
+Instalación
+
+    Clona el repositorio:
+
+git clone https://github.com/Kenkyoo/react-app-users.git
+
+    Instala las dependencias:
+
+cd react-app-users
+npm install
+
+    Inicia el servidor de desarrollo:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Accede a http://localhost:3000 en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Descripción del Proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Este proyecto utiliza la API https://randomuser.me/api/ para obtener una lista de usuarios aleatorios, que se muestran en un carrusel usando la librería Swiper.
 
-## Learn More
+El componente principal hace una solicitud de datos al cargar, y al recibir los datos, muestra cada usuario en un SwiperSlide dentro de un componente Card.
+Estructura de Archivos
 
-To learn more about Next.js, take a look at the following resources:
+    pages/index.tsx: Componente principal que renderiza el carrusel de usuarios.
+    components/card.tsx: Componente que representa cada usuario en el carrusel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dependencias
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+"dependencies": {
+  "next": "14.2.14",
+  "react": "^18",
+  "react-dom": "^18",
+  "swiper": "^11.1.14"
+},
+"devDependencies": {
+  "@types/node": "^20",
+  "@types/react": "^18",
+  "@types/react-dom": "^18",
+  "daisyui": "^4.12.12",
+  "eslint": "^8",
+  "eslint-config-next": "14.2.14",
+  "postcss": "^8",
+  "tailwindcss": "^3.4.1",
+  "typescript": "^5"
+}
 
-## Deploy on Vercel
+Licencia
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este proyecto está bajo la licencia MIT.
