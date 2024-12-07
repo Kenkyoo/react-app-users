@@ -13,8 +13,33 @@ import 'swiper/css/scrollbar';
 
 import Card from './card';
 
+interface User {
+  name: {
+    first: string;
+    last: string;
+  };
+  phone: string;
+  email: string;
+  picture: {
+    large: string;
+  };
+  dob: {
+    age: number;
+  };
+  gender: string;
+  login: {
+    uuid: number;
+  };
+  location: {
+    city: string;
+    country: string;
+  };
+}
+
+
 export default function Home() {
-    const [data, setdata] = useState([])
+
+    const [data, setData] = useState<User[]>([]);
 
     useEffect(() => {
       fetch('https://randomuser.me/api/?results=10')
@@ -23,7 +48,7 @@ export default function Home() {
         })
         .then((data) => {
           console.log(data.results);
-          setdata(data.results)
+          setData(data.results)
         })
     }, [])
     

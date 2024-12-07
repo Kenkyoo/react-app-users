@@ -1,4 +1,15 @@
-const Card = ({name, phone, email, picture, age, gender, city, country}) => {
+interface CardProps {
+  name: string;
+  phone: string;
+  email: string;
+  picture: string;
+  age: number;
+  gender: string;
+  city: string;
+  country: string;
+}
+
+const Card = ({name, phone, email, picture, age, gender, city, country} : CardProps) => {
     return (
         <div className="card bg-base-100 w-96 shadow-xl">
           <figure>
@@ -15,7 +26,7 @@ const Card = ({name, phone, email, picture, age, gender, city, country}) => {
             <p>{email} {phone}</p>
             <p>{city} {country}</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-primary">User</button>
             </div>
           </div>
         </div>
